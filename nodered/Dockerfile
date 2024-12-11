@@ -6,4 +6,4 @@ RUN npm install node-red-contrib-ui-level
 
 COPY --chown=node-red:root config /config
 
-LABEL org.opencontainers.image.source=https://github.com/everest/everest-demo
+LABEL org.opencontainers.image.source=https://github.com/falirandria/everest-demo

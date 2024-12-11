@@ -55,4 +55,4 @@ RUN pip install --break-system-packages paho-mqtt==2.1.0
 
 COPY run-test.sh /ext/source/tests/run-test.sh
 
-LABEL org.opencontainers.image.source=https://github.com/everest/everest-demo
+LABEL org.opencontainers.image.source=https://github.com/falirandria/everest-demo

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-DEMO_REPO="https://github.com/everest/everest-demo.git"
+DEMO_REPO="https://github.com/falirandria/everest-demo.git"
 DEMO_BRANCH="main"
 
 START_OPTION="auto"
