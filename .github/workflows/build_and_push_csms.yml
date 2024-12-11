@@ -29,13 +29,13 @@ jobs:
             csms_branch: set_charging_profile
             image_name: manager
             context: ./maeve-csms/manager
-            host_namespace: ghcr.io/everest/everest-demo
+            host_namespace: ghcr.io/falirandria/everest-demo
           - csms: maeve
             csms_repo: US-JOET/maeve-csms
             csms_branch: set_charging_profile
             image_name: gateway
             context: ./maeve-csms/gateway
-            host_namespace: ghcr.io/everest/everest-demo
+            host_namespace: ghcr.io/falirandria/everest-demo
 #           - csms_dir: citrineos
 #             csms_repo: https://github.com/citrineos/citrineos-core.git
 #             csms_branch: feature/everest-demo
@@ -114,8 +114,8 @@ jobs:
 #             docker image list
 #             # hardcoding the list of containers for now
 #             echo "Retagging {{ $matrix.csms }}-csms-gateway:latest to "
-#             docker tag ${{ matrix.csms }}-csms-gateway:latest ghcr.io/everest/everest-demo/${{ matrix.csms }}-csms-gateway:"${TAG}"
-#             docker tag ${{ matrix.csms }}-csms-manager:latest ghcr.io/everest/everest-demo/${{ matrix.csms }}-csms-manager:"${TAG}"
+#             docker tag ${{ matrix.csms }}-csms-gateway:latest ghcr.io/falirandria/everest-demo/${{ matrix.csms }}-csms-gateway:"${TAG}"
+#             docker tag ${{ matrix.csms }}-csms-manager:latest ghcr.io/falirandria/everest-demo/${{ matrix.csms }}-csms-manager:"${TAG}"
 #             echo "After retagging, image list is"
 #             docker image list
 # 
@@ -146,8 +146,8 @@ jobs:
 #         shell: bash
 #         run: |
 #             source everest-demo/.env
-#             docker push ghcr.io/everest/everest-demo/${{ matrix.csms }}-csms-gateway:"${TAG}"
-#             docker push ghcr.io/everest/everest-demo/${{ matrix.csms }}-csms-manager:"${TAG}"
+#             docker push ghcr.io/falirandria/everest-demo/${{ matrix.csms }}-csms-gateway:"${TAG}"
+#             docker push ghcr.io/falirandria/everest-demo/${{ matrix.csms }}-csms-manager:"${TAG}"
 # 
 
       - name: Build and export to Docker

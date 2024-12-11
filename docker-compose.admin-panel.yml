@@ -2,12 +2,12 @@ version: "3.6"
 
 services:
   mqtt-server:
-    image: ghcr.io/everest/everest-demo/mqtt-server:${TAG}
+    image: ghcr.io/falirandria/everest-demo/mqtt-server:${TAG}
     logging:
       driver: none
 
   manager:
-    image: ghcr.io/everest/everest-demo/manager:${TAG}
+    image: ghcr.io/falirandria/everest-demo/manager:${TAG}
     deploy:
       resources:
         limits:
