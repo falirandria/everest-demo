@@ -99,12 +99,17 @@ jobs:
         with:
           context: ${{ matrix.context }}
           platforms: linux/amd64,linux/arm64
-          push: false
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha,scope=${{ matrix.image_name }}
           cache-to: type=gha,mode=max,scope=${{ matrix.image_name }}
 
+      - name: Pull Docker image
+        run: docker pull ghcr.io/falirandria/everest-demo/mqtt-server:${{ steps.docker-image-version-check.outputs.TAG }}
+        
+      - name: List Docker images
+        run: docker images
       # Following four steps are specifically for running automated tests which includes loading the 
       # mqtt-server image from the GitHub Actions Cache so that the docker compose automated tests can 
       # use this already built image instead of pulling it from GitHub Container Registry
