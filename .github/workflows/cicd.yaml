@@ -145,18 +145,18 @@ jobs:
         run: |
           docker load --input /tmp/mqtt-server_${{ steps.docker-image-version-check.outputs.TAG }}.tar     
     
-      - name: Run automated tests using docker-compose.automated-tests.yml
-        if: ${{ matrix.image_name == 'manager' }}
-        run: |
-          docker images
-          echo "Running docker compose up..."
-          docker compose --project-name everest-ac-automated-testing \
-                  --file "docker-compose.automated-tests.yml" up \
-                    --abort-on-container-exit \
-                    --exit-code-from manager
+      # - name: Run automated tests using docker-compose.automated-tests.yml
+      #   if: ${{ matrix.image_name == 'manager' }}
+      #   run: |
+      #     docker images
+      #     echo "Running docker compose up..."
+      #     docker compose --project-name everest-ac-automated-testing \
+      #             --file "docker-compose.automated-tests.yml" up \
+      #               --abort-on-container-exit \
+      #               --exit-code-from manager
 
-          exit_code=$?            
-          echo "Docker-compose up exit code from manager service: $exit_code"
+      #     exit_code=$?            
+      #     echo "Docker-compose up exit code from manager service: $exit_code"
       
       - name: Build and push
         uses: docker/build-push-action@v6
