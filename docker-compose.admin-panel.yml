@@ -22,5 +22,3 @@ services:
     entrypoint: "sh /ext/build/run-scripts/run-sil.sh"
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=0
-    extra_hosts:
-      - "host.docker.internal:host.docker.internal"
